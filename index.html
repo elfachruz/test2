@@ -14,19 +14,7 @@
   </body>
   <script>
     function zzz(){
-      $.ajax({
-		  		url: "https://devel.egref.com/winproman/index.php/workflow/test_git",
-		  		type: 'post',
-		  		data: $('#frm').serialize(),
-		  		dataType: 'json',
-		  		cache: false,
-		  		success: function(res){
-		  			$("#inis").html(res.data);
-		  		},
-		  		error: function(xhr, status, error){
-		  			alert("Koneksi bermasalah");
-		  		}
-		  	});
+      alert("OK");
     }
   </script>
 </html>
