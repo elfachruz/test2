@@ -1,4 +1,6 @@
 <?php
-$res = $_POST;
+$res = array(
+			'data' => $_POST
+		);
 echo json_encode($res);
 ?>
