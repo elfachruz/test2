@@ -1,3 +1,32 @@
 <html>
-COBA
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <form id="frm">
+    <input type="hidden" name="checklay[]" value="1">
+    <input type="hidden" name="checklay[]" value="5">
+    <input type="hidden" name="checklay[]" value="4">
+      <span class="btn btn-primary" onclick="submitt();">Submit</span>
+    </form>
+    <div style="margin-top:20px;" id="inis"></div>
+  </body>
+  <script>
+    function submitt(){
+      $.ajax({
+		  		url: "proses.php",
+		  		type: 'post',
+		  		data: $('#frm').serialize(),,
+		  		dataType: 'json',
+		  		cache: false,
+		  		success: function(res){
+		  			$("#inis").html(res.data);
+		  		},
+		  		error: function(xhr, status, error){
+		  			alert("Koneksi bermasalah");
+		  		}
+		  	});
+    }
+  </script>
 </html>
